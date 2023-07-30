@@ -1,26 +1,18 @@
-/* eslint-disable react/prop-types */
-import React from "react";
 import "./TaskCard.css";
-
-interface TaskCardProps {
-  title?: string;
-  dueDate?: string;
+import React from "react";
+interface TaskCardInterface {
+  title: string;
   completedAtDate?: string;
-  assigneeName?: string;
+  dueDate?: string;
+  assigneeName: string;
 }
-
-const TaskCard = (props: TaskCardProps) => {
-  let taskDate: string;
-  if (props.dueDate) {
-    taskDate = `Due date: ${props.dueDate}`;
-  }
-  if (props.completedAtDate) {
-    taskDate = `Completed on: ${props.completedAtDate}`;
-  }
+const TaskCard = (props: TaskCardInterface) => {
+  console.log(props);
   return (
-    <div className="TaskItem w-full p-5">
-      <h2 className="text-xl font-bold mb-2">{props.title}</h2>
-      <p>{taskDate}</p>
+    <div className="TaskItem border-black">
+      <p className="text-xl font-semibold border-black">{props.title}</p>
+      {props.dueDate && <p> Due on: {props.dueDate}</p>}
+      {props.completedAtDate && <p> Completed on: {props.completedAtDate}</p>}
       <p>Assignee: {props.assigneeName}</p>
     </div>
   );

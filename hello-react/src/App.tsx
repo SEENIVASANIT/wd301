@@ -1,47 +1,29 @@
-/* eslint-disable no-unused-vars */
+import TaskCard from './TaskCard';
+
+import './TaskCard.css'
 import React from "react";
-import TaskCard from "./TaskCard";
+
 
 function App() {
   return (
-    <>
-      <div className="mx-10 my-5">
-        <h1 className="text-2xl font-bold my-2 mx-32">Smarter Tasks</h1>
-        <p className="font-bold text-sm  mb-3">
-          Project: Graduation FInal Year Project (Revamp College Website)
-        </p>
-        <div className="flex justify-center">
-          <div className="flex-1 w-36 px-10 border-2 rounded-xl border-grey-900 ">
-            <h1 className="text-2xl font-bold text-center pb-5">pending</h1>
-            <TaskCard
-              title="Build the website with static content"
-              dueDate="10th April"
-              assigneeName="Rohit S"
-            />
-            <TaskCard
-              title="Add blog"
-              dueDate="22nd March"
-              assigneeName="Rohit M"
-            />
-            <button className="bg-gray-200 px-5 rounded-md">+ New Task</button>
-          </div>
-
-          <div className="flex-1 w-36 px-10 border-2 rounded-xl border-grey-900 p-5 ml-14 mr-32">
-            <h1 className="text-2xl font-bold bold text-center pb-5">done</h1>
-            <TaskCard
-              title="Design the mockup"
-              completedAtDate="10th April"
-              assigneeName="Rohit M"
-            />
-            <TaskCard
-              title="Get approval from principal"
-              completedAtDate="20th April"
-              assigneeName="Ajay S"
-            />
-          </div>
-        </div>
+    <div >
+      <h1 className='px-3 text-2xl font-semibold flex justify-center'> Smarter Tasks</h1>
+      <p className='px-3 text-xl flex justify-center'> Project : Graduation Final Year Project (Revamp College Website)</p>
+    <div className='flex border-black py-6 justify-center'>
+      <div className="bg-gray-700 text-black border-2 border-black rounded-lg p-4 m-2" >
+        <h1 className="text-xl font-bold px-20 items-center" > Pending</h1>
+        <TaskCard title="Build The Website With Static Content" dueDate='10th April' assigneeName='Rohit S'  ></TaskCard>
+        <TaskCard title="Add a Blog" dueDate='22nd March' assigneeName='Rohit M'  ></TaskCard>
+        <h4 className='bg-gray-900 cursor-pointer rounded px-3'> + New Task</h4>
       </div>
-    </>
+      <div className="bg-gray-700 text-black border-2 border-black rounded-lg p-4 m-2">
+        <h1 className="text-xl font-bold px-20 " >Done</h1>
+        <TaskCard title="Design The Mockup" completedAtDate='10th April' assigneeName='Rohit M'></TaskCard>
+        <TaskCard title="Get Approval From Principal" completedAtDate='20th April' assigneeName='Ajay S'></TaskCard>
+
+      </div>
+    </div>
+    </div>
   );
 }
 
