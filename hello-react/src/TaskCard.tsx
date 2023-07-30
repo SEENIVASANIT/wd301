@@ -1,15 +1,33 @@
-
-import './TaskCard.css'
+/* eslint-disable react/prop-types */
 import React from "react";
-const TaskCard = (props) => {
-  console.log(props)
-  return (
-    <div className='TaskItem'>
-      <h2 className="text-xl font-bold">{props.title}</h2>
-      <p>{props.Completed_on} {props.due_date}</p>
-      <p>{props.Assignee} {props.name}</p>
-    </div>
-  )
+import "./TaskCard.css";
+
+interface TaskCard {
+  title: string;
+  dueDate?: string;
+  completedAtDate?: string;
+  assigneeName: string;
 }
 
-export default TaskCard
+let TaskCard = ({
+  title,
+  dueDate,
+  completedAtDate,
+  assigneeName,
+}: TaskCard) => {
+  let date;
+  if (dueDate) {
+    date = `Due Date: ${dueDate}`;
+  } else {
+    date = `Completed on: ${completedAtDate}`;
+  }
+  return (
+    <div className="TaskItem">
+      <h2 className="text-xl font-bold">{title}</h2>
+      <p>{date}</p>
+      <p>Assignee: {assigneeName}</p>
+    </div>
+  );
+};
+
+export default TaskCard;

@@ -1,32 +1,46 @@
-import { useState } from 'react'
+import React from "react";
+import TaskCard from "./TaskCard";
 
-import TaskCard from './TaskCard'
-import React from 'react'
 function App() {
-
-
   return (
-    <>
-    <h1 className='text-xl font-bold'>Smarter Tasks</h1>
-    <h1 >Project:<span className='text-gray-500'>Graduation Final Year Project(Revamp College Website)</span></h1>
-    <div className='flex flex-row'>
-  <div>
-    <h1 className='text-xl font-bold'>Pending</h1>
-  <TaskCard Completed_on="Due on:" Assignee="Assignee:" title="mvbncnvcb" due_date="20-10-2002" name="seenivasan"></TaskCard>
-  <TaskCard Completed_on="Due on:" Assignee="Assignee:" title="mvbncnvcb" due_date="20-10-2002" name="seenivasan"></TaskCard>
-  <button className='bg-slate-400 hover:bg-blue-300 text-yellow-300 font-bold py-2 px-4 rounded'>New Task</button>
-
-  </div>
-  <div>
-    <h1 className='text-xl font-bold'>Done</h1>
-  <TaskCard Completed_on="Completed on:" Assignee="Assignee:" title="mvbncnvcb" due_date="20-10-2002" name="seenivasan"></TaskCard>
-  <TaskCard Completed_on="Completed on:" Assignee="Assignee:" title="mvbncnvcb" due_date="20-10-2002" name="seenivasan"></TaskCard>
-  </div>
-  </div>
-  
-  
-    </>
-  )
+    <div className="center">
+      <h1 className="flex p-4 font-bold text-4xl">Smarter Tasks</h1>
+      <p className="flex p-5 font-bold text-sm">
+        Project: Graduation FInal Year Project (Revamp College Website)
+      </p>
+      <div className="md:flex justify-center md:h-full">
+        <div className=" p-5 border border-gray-500 m-4 rounded-lg">
+          <h1 className="p-3 text-center">Pending</h1>
+          <TaskCard
+            title="Build the website with static content"
+            dueDate="10th April"
+            assigneeName="Rohit S"
+          />
+          <TaskCard
+            title="Add blog"
+            dueDate="27nd Jan"
+            assigneeName="loght s"
+          />
+          <button className="">+ Add Task</button>
+        </div>
+        <div className="w-1/2 p-4 border border-gray-500 m-4 rounded-lg">
+          <h1 className="p-3 text-center">Done</h1>
+          <TaskCard
+            title="Design the mockup"
+            completedAtDate="10th jully"
+            assigneeName="seeni M"
+          />
+          <TaskCard
+            title="Get approval from principal"
+            completedAtDate="26th April"
+            assigneeName="jeeva S"
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+
+
+export default App;
