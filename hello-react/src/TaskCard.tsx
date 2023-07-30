@@ -1,19 +1,20 @@
-import "./TaskCard.css";
 import React from "react";
-interface TaskCardInterface {
-  title: string;
-  completedAtDate?: string;
+import "./TaskCard.css";
+
+interface TaskCardProps {
   dueDate?: string;
+  completedAtDate?: string;
+  title: string;
   assigneeName: string;
 }
-const TaskCard = (props: TaskCardInterface) => {
-  console.log(props);
+
+const TaskCard = (props: TaskCardProps) => {
   return (
-    <div className="TaskItem border-black">
-      <p className="text-xl font-semibold border-black">{props.title}</p>
-      {props.dueDate && <p> Due on: {props.dueDate}</p>}
-      {props.completedAtDate && <p> Completed on: {props.completedAtDate}</p>}
-      <p>Assignee: {props.assigneeName}</p>
+    <div className="TaskItem">
+      <h2 className="text-xl font-bold"> {props.title} </h2>
+      {props.dueDate && <p>Due on:{props.dueDate}</p>}
+      {props.completedAtDate && <p>Completed on:{props.completedAtDate}</p>}
+      <p>Assigne:{props.assigneeName} </p>
     </div>
   );
 };

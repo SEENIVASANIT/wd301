@@ -1,28 +1,52 @@
 import TaskCard from './TaskCard';
-
 import './TaskCard.css'
 import React from "react";
-
-
 function App() {
   return (
-    <div >
-      <h1 className='px-3 text-2xl font-semibold flex justify-center'> Smarter Tasks</h1>
-      <p className='px-3 text-xl flex justify-center'> Project : Graduation Final Year Project (Revamp College Website)</p>
-    <div className='flex border-black py-6 justify-center'>
-      <div className="bg-gray-700 text-black border-2 border-black rounded-lg p-4 m-2" >
-        <h1 className="text-xl font-bold px-20 items-center" > Pending</h1>
-        <TaskCard title="Build The Website With Static Content" dueDate='10th April' assigneeName='Rohit S'  ></TaskCard>
-        <TaskCard title="Add a Blog" dueDate='22nd March' assigneeName='Rohit M'  ></TaskCard>
-        <h4 className='bg-gray-900 cursor-pointer rounded px-3'> + New Task</h4>
+    <div className="container mx-auto mt-8">
+      <h1 className="text-center mb-4 text-3xl font-bold">Smarter Tasks</h1>
+      <p className="mb-4">
+        Project: Graduation Final Year Project (Revamp College Website)
+      </p>
+      <div className="flex" id='sd'>
+        <div className="p-4 border border-solid border-indigo-800 w-1/2">
+          <h2 className="mb-2 text-lg text-red-100">Pending</h2>
+          <div className="task-card">
+          
+            <p className="text-sm mb-2 text-red-600">Due Date: 10th April</p>
+            <p className="text-sm text-green-500">Assignee: Rohit S</p>
+          </div>
+          <div className="flex task-card">
+            <h3 className="font-bold mb-2 text-yellow-600">Add a blog</h3>
+            <p className="text-sm mb-2 text-red-600">Due Date: 22nd March</p>
+            <p className="text-sm text-green-500">Assignee: Rohit M</p>
+          </div>
+          <button className="flex items-center mt-4">
+            <span className="ml-2 text-blue-600">Spawn a new task</span>
+          </button>
+        </div>
+        <div className="p-4 border border-solid border-indigo-600 w-1/2">
+          <h2 className="mb-2 text-lg text-red-500">Done</h2>
+          <div className="task-card">
+            <h3 className="font-bold mb-2 text-yellow-600">
+              Design the darn mockUp
+            </h3>
+            <p className="text-sm mb-2 text-red-600">
+              Completed at: 10th April
+            </p>
+            <p className="text-sm text-green-500">Assignee: Rohit M</p>
+          </div>
+          <div className="task-card">
+            <h3 className="font-bold mb-2 text-yellow-600">
+              Get the approval from the principal
+            </h3>
+            <p className="text-sm mb-2 text-red-600">
+              Completed at: 20th April
+            </p>
+            <p className="text-sm text-500">Assignee: Ajay S</p>
+          </div>
+        </div>
       </div>
-      <div className="bg-gray-700 text-black border-2 border-black rounded-lg p-4 m-2">
-        <h1 className="text-xl font-bold px-20 " >Done</h1>
-        <TaskCard title="Design The Mockup" completedAtDate='10th April' assigneeName='Rohit M'></TaskCard>
-        <TaskCard title="Get Approval From Principal" completedAtDate='20th April' assigneeName='Ajay S'></TaskCard>
-
-      </div>
-    </div>
     </div>
   );
 }
