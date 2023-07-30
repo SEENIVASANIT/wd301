@@ -1,7 +1,10 @@
 import { useState } from 'react'
+
 import TaskCard from './TaskCard'
 import React from 'react'
 function App() {
+
+
   return (
     <>
     <h1 className='text-xl font-bold'>Smarter Tasks</h1>
