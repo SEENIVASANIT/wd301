@@ -6,15 +6,15 @@ interface propTitle {
   dueDate?: string;
   assigneeName: string;
 }
-var tempString = "";
+var store_value = "";
 let TaskCard = (props: propTitle) => {
-  tempString = props.dueDate
+  store_value = props.dueDate
     ? `Due on: ${props.dueDate}`
     : `Completed on: ${props.completedAtDate}`;
   return (
     <div className="TaskItem">
       <h2 className="text-xl font-bold">{props.title}</h2>
-      <p>{tempString}</p>
+      <p>{store_value}</p>
       <p>Assignee: {props.assigneeName}</p>
     </div>
   );
